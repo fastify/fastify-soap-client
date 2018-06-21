@@ -22,7 +22,7 @@ const addSchema = {
 t.test('fastify-soap-client', t => {
   t.test('ok', t => {
     t.plan(3)
-    const fastify = fastifyBuilder({ logger: { level: 'trace' } })
+    const fastify = fastifyBuilder({ logger: { level: 'silent' } })
 
     fastify.register(fastifySoapClient, {
       url: 'http://www.dneonline.com/calculator.asmx?WSDL'
