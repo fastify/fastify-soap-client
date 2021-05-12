@@ -1,6 +1,9 @@
 # fastify-soap-client
 
-[![Build Status](https://travis-ci.org/fastify/fastify-soap-client.svg?branch=master)](https://travis-ci.org/fastify/fastify-soap-client)
+![CI](https://github.com/fastify/fastify-soap-client/workflows/CI/badge.svg)
+[![NPM version](https://img.shields.io/npm/v/fastify-soap-client)](https://www.npmjs.com/package/fastify-soap-client)
+[![Known Vulnerabilities](https://snyk.io/test/github/fastify/fastify-soap-client/badge.svg)](https://snyk.io/test/github/fastify/fastify-soap-client)
+[![Coverage Status](https://coveralls.io/repos/github/fastify/fastify-soap-client/badge.svg?branch=master)](https://coveralls.io/github/fastify/fastify-soap-client?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
 This plugin decorates your fastify instance with a SOAP client using [`soap` library](https://www.npmjs.com/package/soap)
