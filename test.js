@@ -1,8 +1,11 @@
 'use strict'
 
+const { readFileSync } = require('fs')
+const { createServer } = require('http')
 const { join } = require('path')
 const t = require('tap')
 const fastifyBuilder = require('fastify')
+const soap = require('soap')
 
 const fastifySoapClient = require('./index')
 
@@ -21,6 +24,32 @@ const addSchema = {
 }
 
 t.test('fastify-soap-client', t => {
+  let httpServer
+
+  t.beforeEach(async () => {
+    const calculatorService = {
+      Calculator: {
+        CalculatorSoap: {
+          Add: function (args) {
+            return { AddResult: args.intA + args.intB }
+          }
+        }
+      }
+    }
+    const xml = readFileSync(join(__dirname, 'calculator.wsdl'), 'utf8')
+
+    httpServer = createServer(function (request, response) {
+      response.end('404: Not Found: ' + request.url)
+    })
+
+    httpServer.listen(51515)
+    soap.listen(httpServer, '/calculator', calculatorService, xml)
+  })
+
+  t.afterEach(async () => {
+    httpServer.close()
+  })
+
   t.test('ok', t => {
     t.plan(3)
     const fastify = fastifyBuilder({ logger: { level: 'silent' } })
