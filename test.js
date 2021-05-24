@@ -1,5 +1,6 @@
 'use strict'
 
+const { join } = require('path')
 const t = require('tap')
 const fastifyBuilder = require('fastify')
 
@@ -25,7 +26,7 @@ t.test('fastify-soap-client', t => {
     const fastify = fastifyBuilder({ logger: { level: 'silent' } })
 
     fastify.register(fastifySoapClient, {
-      url: 'http://www.dneonline.com/calculator.asmx?WSDL'
+      url: join(__dirname, 'calculator.wsdl')
     })
     fastify.get('/describe', function (req, reply) {
       reply.send(this.soapClient.describe())
