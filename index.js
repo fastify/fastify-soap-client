@@ -15,5 +15,5 @@ module.exports = fp(function (fastify, options, next) {
     .catch(next)
 }, {
   fastify: '3.x',
-  name: 'fastify-soap-client'
+  name: '@fastify/soap-client'
 })
