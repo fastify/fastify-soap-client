@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/fastify/fastify-soap-client#readme",
   "dependencies": {
-    "fastify-plugin": "^3.0.0",
+    "fastify-plugin": "^4.0.0",
     "soap": "^0.45.0"
   },
   "devDependencies": {
