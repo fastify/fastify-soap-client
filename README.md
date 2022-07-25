@@ -9,7 +9,7 @@ This plugin decorates your fastify instance with a SOAP client using [`soap` lib
 ## Install
 
 ```
-npm i --save @fastify/soap-client
+npm i @fastify/soap-client
 ```
 
 ## Usage
