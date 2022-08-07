@@ -96,7 +96,7 @@ t.test('fastify-soap-client', t => {
     fastify.register(fastifySoapClient)
 
     fastify.ready(function (err) {
-      t.equal(err.message, 'options.url should be a string')
+      t.equal(err.message, '@fastify/soap-client: options.url should be a string')
     })
   })
 
