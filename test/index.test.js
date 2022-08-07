@@ -7,7 +7,7 @@ const t = require('tap')
 const fastifyBuilder = require('fastify')
 const soap = require('soap')
 
-const fastifySoapClient = require('./index')
+const fastifySoapClient = require('..')
 
 const addSchema = {
   body: {
