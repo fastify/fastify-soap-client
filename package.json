@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard | snazzy",
-    "test": "npm run lint && npm run unit",
-    "test:ci": "npm run lint && tap test.js --no-check-coverage --coverage-report=lcovonly",
-    "unit": "tap"
+    "test": "npm run test:unit",
+    "test:unit": "tap"
   },
   "repository": {
     "type": "git",
