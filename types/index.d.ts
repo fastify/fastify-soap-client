@@ -7,11 +7,16 @@ declare module 'fastify' {
   }
 }
 
-interface FastifySoapClientPluginOptions {
-  url: string;
-  options?: SoapClientOptions;
+type FastifySoapClient = FastifyPluginCallback<fastifySoapClient.FastifySoapClientOptions>
+
+declare namespace fastifySoapClient {
+  export interface FastifySoapClientOptions {
+    url: string;
+    options?: SoapClientOptions;
+  }
+  export const fastifySoapClient: FastifySoapClient
+  export { fastifySoapClient as default }
 }
 
-declare const fastifySoapClient: FastifyPluginCallback<FastifySoapClientPluginOptions>
-
-export default fastifySoapClient
+declare function fastifySoapClient(...params: Parameters<FastifySoapClient>): ReturnType<FastifySoapClient>
+export = fastifySoapClient
