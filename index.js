@@ -3,7 +3,7 @@
 const soap = require('soap')
 const fp = require('fastify-plugin')
 
-function fastifySoapClient(fastify, options, next) {
+function fastifySoapClient (fastify, options, next) {
   const url = options.url
   if (typeof url !== 'string') return next(new Error('@fastify/soap-client: options.url should be a string'))
 
