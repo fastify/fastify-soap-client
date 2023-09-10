@@ -1,8 +1,8 @@
 'use strict'
 
-const { readFileSync } = require('fs')
-const { createServer } = require('http')
-const { join } = require('path')
+const { readFileSync } = require('node:fs')
+const { createServer } = require('node:http')
+const { join } = require('node:path')
 const t = require('tap')
 const fastifyBuilder = require('fastify')
 const soap = require('soap')
